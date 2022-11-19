@@ -17,9 +17,11 @@ public class HeadControl : MonoBehaviour
     void Start()
     {
         count = 0;
+        // Instantiate a body segment. Give it the same location & rotation as the head
         GameObject tailObject = (GameObject)Instantiate(bodyPrefab, transform.position, transform.rotation);
         
-        // Get the specific object from the GameObject
+        // The GameObject goesn't give us access to script information, but we can use GetComponent get it, so we can
+        // set variables needed for this to work
         BodyController tail = tailObject.GetComponent<BodyController>();
         tail.followCount = 10;
         tail.uplink = this.gameObject;
@@ -29,11 +31,11 @@ public class HeadControl : MonoBehaviour
     void Update()
     {
         count++;
-        if(!mode && count>leftCount) {
+        if(!mode && count>leftCount) {  // done turning left
             mode = !mode;
             count = 0;
         }
-        if(mode && count>rightCount) {
+        if(mode && count>rightCount) {  // done turning right
             mode = !mode;
             count = 0;
         }
