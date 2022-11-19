@@ -4,7 +4,7 @@ A simple shooter game
 
 A long time ago I wanted to create a spaceship shooter game, and have lots of bosses that operated using multiple parts. But at the time I couldn't figure out how to manage it. I decided to give it a try again, this time focusing on controlling each part individually.
 
-[Dragon image](./Results.png)
+![Dragon image](./Results.png)
 
 Here's the process I used to create this
 
